@@ -7,3 +7,6 @@ transformers
 torch
 whisper
 huggingface_hub[hf_xet]
+supabase
+python-dotenv
+psutil
