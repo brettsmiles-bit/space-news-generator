@@ -1,0 +1,6 @@
+# Ignore local config and env
+pipeline_config.json
+venv/
+*.pyc
+__pycache__/
+media/

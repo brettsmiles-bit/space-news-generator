@@ -1,0 +1,9 @@
+openai==0.28.0
+requests
+feedparser
+gTTS
+tqdm
+transformers
+torch
+whisper
+huggingface_hub[hf_xet]
