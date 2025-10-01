@@ -8,39 +8,55 @@ This is a **Python project** that uses FFmpeg for video processing.
 
 ## Quick Start
 
-### 1. Install Dependencies
+### Current Error: Missing Dependencies
+
+If you see `ModuleNotFoundError`, it means Python packages aren't installed yet.
+
+### 1. Install System Packages (Required)
 
 ```bash
-# Install Python packages
-pip install -r requirements.txt
+# Ubuntu/Debian (requires sudo)
+sudo apt-get update
+sudo apt-get install -y python3-venv python3-pip ffmpeg
 
-# Install FFmpeg
-# Ubuntu/Debian:
-sudo apt-get install ffmpeg
-
-# macOS:
+# macOS
 brew install ffmpeg
-
-# Windows: Download from https://ffmpeg.org/download.html
+pip3 install virtualenv
 ```
 
-### 2. Configure API Keys
+### 2. Set Up Virtual Environment
+
+```bash
+cd /tmp/cc-agent/57819754/project
+python3 -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
+### 3. Install Python Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+This installs: openai, requests, feedparser, gTTS, tqdm, transformers, torch, whisper, supabase, python-dotenv, psutil
+
+### 4. Configure API Keys
 
 Edit `pipeline_config.json` and add your API keys:
 - OpenAI API key (for script generation)
 - Pexels, Pixabay, Unsplash, Giphy API keys (for media)
 
-### 3. Set Up Environment
+### 5. Set Up Environment
 
 The `.env` file with Supabase credentials is already configured.
 
-### 4. Verify Setup
+### 6. Verify Setup
 
 ```bash
-python3 setup_check.py
+python setup_check.py
 ```
 
-### 5. Run Pipeline
+### 7. Run Pipeline
 
 ```bash
 # Run optimized pipeline (recommended)
